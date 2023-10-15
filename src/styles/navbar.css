@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #EEF2FB;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;}
+  
+
+.bttn {
+  margin: 0;
+  border: 0;
+  padding: 10px;
+  margin-left: 5px;
+}
+
+
+
+.icon a img {
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.login-register {
+  display: flex;
+  list-style: none;
+  margin-top: 25px;
+}
+
+.login-register li {
+  margin-left: 10px;
+}
+
+.dropdown {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow-down {
+  margin-left: 2px;
+  font-size: 1.2rem;
+}
+
+

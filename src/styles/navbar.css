@@ -7,28 +7,35 @@
 .navbar-container {
   display: flex;
   justify-content: space-around;
-  background-color: #EEF2FB;
+  background-color: #eef2fb;
+  padding-top: 18px;
+  padding-bottom: 25px;
 }
 
 .navbar-list {
   list-style: none;
-  display: flex;}
-  
+  display: flex;
+  margin-top: 15px;
+  margin-right: 25px;
+}
 
 .bttn {
   margin: 0;
   border: 0;
   padding: 10px;
   margin-left: 5px;
+  font-family: "Roboto Medium";
+  font-size: 0.9rem;
+  display: flex;
 }
 
 
 
 .icon a img {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 15px;
+    filter: invert(23%) sepia(100%) saturate(2382%) hue-rotate(292deg) brightness(97%) contrast(105%);
 }
-
 
 .login-register {
   display: flex;
@@ -38,6 +45,13 @@
 
 .login-register li {
   margin-left: 10px;
+}
+
+.login-register li button {
+  font-family: "Roboto Medium";
+  border: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .dropdown {
@@ -52,5 +66,11 @@
   margin-left: 2px;
   font-size: 1.2rem;
 }
+
+.right-container-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 

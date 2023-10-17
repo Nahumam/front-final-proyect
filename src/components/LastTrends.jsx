@@ -4,7 +4,7 @@ function LastTrends() {
   return (
       <div>LastTrends
           
-          <p>sadasdasd</p>
+          <p>Last Trends</p>
     </div>
   )
 }

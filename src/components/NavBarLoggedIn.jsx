@@ -47,7 +47,7 @@ const LoggedIn = () => {
 
     return (
         <Grid
-            sx={{
+           /* sx={{
                 background: 'rgb(255, 255, 255)',
                 borderBottom: '1px solid #e1e1e1',
                 display: 'flex',
@@ -56,6 +56,9 @@ const LoggedIn = () => {
                 py: '1.5em',
                 px: '4em',
                 width: '100vw'
+            }} */
+            sx={{
+                pt: '.7em'
             }}
         >
             <Grid item

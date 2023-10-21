@@ -19,14 +19,6 @@ function StylishCollection() {
                     Elegante Colección de Muebles
                 </h1>
                 <p>Mantente informado con nuestras publicaciones en el blog sobre muebles modernos y de moda en la industria</p>
-                <div className="collection-buttons">
-                    <button><Link to="/">Todos los Muebles</Link></button>
-                    <button><Link to="/dormitorio">Dormitorio</Link></button>
-                    <button><Link to="/sala-de-estar">Sala de Estar</Link></button>
-                    <button><Link to="/oficina-en-casa">Oficina en Casa</Link></button>
-                    <button><Link to="/comedor">Comedor</Link></button>
-                    <button><Link to="/mas">Más</Link></button>
-                </div>
                 <div className="collection-grid">
                     {productos.map(producto => (
                         <div key={producto.id} className="product-item">
@@ -47,4 +39,4 @@ function StylishCollection() {
     )
 }
 
-export default StylishCollection;
+export default StylishCollection

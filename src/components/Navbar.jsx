@@ -47,10 +47,10 @@ function Navbar() {
                                 {showDropdown.inicio && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
-                                            <Link to={''}>1</Link>
+                                            <Link to={''}>Nuestra colección premium</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={''}>2</Link>
+                                            <Link to={''}>Ofertas</Link>
                                         </li>
                                     </ul>
                                 )}
@@ -70,10 +70,10 @@ function Navbar() {
                                 {showDropdown.mueblesHogar && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
-                                            <Link to={''}>3</Link>
+                                            <Link to={''}>Habitacion</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={''}>4</Link>
+                                            <Link to={''}>Cocina</Link>
                                         </li>
                                     </ul>
                                 )}
@@ -93,10 +93,16 @@ function Navbar() {
                                 {showDropdown.salaEstar && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
-                                            <Link to={''}>5</Link>
+                                            <Link to={''}>Sofas</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={''}>6</Link>
+                                            <Link to={''}>Sillones</Link>
+                                        </li>
+                                        <li className="bttn-open">
+                                            <Link to={''}>Sillas</Link>
+                                        </li>
+                                        <li className="bttn-open">
+                                            <Link to={''}>Mesas y estanterias</Link>
                                         </li>
                                     </ul>
                                 )}
@@ -117,10 +123,10 @@ function Navbar() {
                                 {showDropdown.acercaDe && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
-                                            <Link to={''}>7</Link>
+                                            <Link to={''}>Nuestros miembros</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={''}>8</Link>
+                                            <Link to={''}>Más acerca de nosotros</Link>
                                         </li>
                                     </ul>
                                 )}
@@ -139,10 +145,7 @@ function Navbar() {
                                 {showDropdown.contacto && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
-                                            <Link to={''}>9</Link>
-                                        </li>
-                                        <li className="bttn-open">
-                                            <Link to={''}>10</Link>
+                                            <Link to={'/contact'}>Contactanos!</Link>
                                         </li>
                                     </ul>
                                 )}

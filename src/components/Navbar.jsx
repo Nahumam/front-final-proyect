@@ -27,9 +27,9 @@ function Navbar() {
         <>
             <section className="navbar-container">
                 <div className="icon">
-                    <a href="/">
+                    <Link to={"/"}>
                         <img src={Logo} alt="" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="right-container-navbar">
                     <ul className="navbar-list">
@@ -38,7 +38,6 @@ function Navbar() {
                                 onClick={() => toggleDropdown('inicio')}
                             >
                                 <NavLink
-                                    to='/'
                                     activeClassName="active"
                                     className={`bttn ${showDropdown.inicio ? 'active' : ''}`}
                                 >

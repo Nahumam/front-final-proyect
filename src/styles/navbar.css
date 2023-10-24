@@ -6,17 +6,33 @@
 
 .navbar-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: #eef2fb;
-  padding-top: 18px;
-  padding-bottom: 25px;
+  padding: 18px 0 25px;
+  align-items: center;
+  height: 110px;
 }
 
 .navbar-list {
   list-style: none;
   display: flex;
-  margin-top: 15px;
-  margin-right: 25px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.navbar-list .bttn {
+  height: 30px;
+  padding: 10px;
+  color: #121115;
+  background: transparent;
+  border: none;
+  font-family: "Roboto Medium";
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.navbar-list .bttn:last-child {
+  margin-bottom: 10px;
 }
 
 .bttn {
@@ -30,10 +46,11 @@
 }
 
 .icon a img {
-  width: 100%;
-  margin-top: 15px;
-  filter: invert(23%) sepia(100%) saturate(2382%) hue-rotate(292deg)
+  width: 60%;
+  margin-top: 8px;
+  filter: invert(20%) sepia(100%) saturate(2382%) hue-rotate(292deg)
     brightness(97%) contrast(105%);
+  margin-left: 60px;
 }
 
 .login-register {
@@ -51,18 +68,20 @@
   border: 0;
   cursor: pointer;
   font-size: 0.9rem;
+  padding: 8px 15px;
+  border-radius: 15px;
 }
 
 .login button {
   background-color: #c900c0;
-  color: rgb(245, 245, 245);
-  border-radius: 15px;
-  padding: 10px;
+  color: #fff;
+  height: 38px;
 }
 
 .right-container-navbar {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
 }
 
 .first-bttn {
@@ -73,15 +92,20 @@
   font-family: "Roboto Medium";
   font-size: 0.9rem;
   display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  background: none;
+  outline: none;
   color: #cd06bc;
   border-bottom: 1px solid #cd06bc;
 }
 
 .register button {
-  background-color: rgb(250, 250, 250);
+  background-color: #fafafa;
   color: #c900c0;
   border-radius: 15px;
-  padding: 7px 10px;
+  padding: 7px 15px;
 }
 
 .register {
@@ -90,17 +114,19 @@
   height: 38px;
 }
 
-.dropdown {
-  margin: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.bttn-dropdown {
+  position: relative;
+  cursor: pointer;
 }
 
-.arrow-down {
-  margin-left: 2px;
-  font-size: 1.2rem;
+.bttn-dropdown .arrow-down {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #cd06bc;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -115,15 +141,21 @@
   margin-top: 8px;
 }
 
-.arrow-down {
-  margin-left: 2px;
-  font-size: 1.2rem;
-}
-
-.dropdown a,
-.first-dropdown a {
-  display: inline-block;
+.dropdown a {
   text-decoration: none;
   color: #c900c0;
   margin: 8px 0;
+  cursor: pointer;
+}
+
+.bttn {
+  position: relative;
+}
+
+.bttn.active .dropdown {
+  display: block;
+}
+
+.bttn.active {
+white-space: nowrap;
 }

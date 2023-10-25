@@ -46,6 +46,9 @@ function Navbar() {
                                 {showDropdown.inicio && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
+                                            <Link to={'/'}>Regresar al Inicio</Link>
+                                        </li>
+                                        <li className="bttn-open">
                                             <Link to={''}>Nuestra colección premium</Link>
                                         </li>
                                         <li className="bttn-open">

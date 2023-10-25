@@ -6,32 +6,33 @@ import About from './routes/About';
 import Contact from './routes/Contact';
 import Login from './routes/Login'
 import Register from '/routes/Register'
+import Footer from './components/Footer.jsx'
 import './styles/App.css'
 
 const router = CreateBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home />
   },
 
   {
     path: "/about",
-    element: <About/>
+    element: <About />
   },
 
   {
     path: "/contact",
-    element: <Contact/>
+    element: <Contact />
   },
 
   {
     path: "/login",
-    element: <Login/>
+    element: <Login />
   },
 
   {
     path: "/register",
-    element: <Register/>
+    element: <Register />
   },
 
 ])
@@ -39,10 +40,13 @@ const router = CreateBrowserRouter([
 function App() {
   return (
     <>
-        <div className="navbar-in">
-          <Navbar />
-        </div>
-<RouterProvider/> 
+      <div className="navbar-in">
+        <Navbar />
+      </div>
+      <RouterProvider />
+      <div className="footer-in">
+        <Footer />
+      </div>
     </>
   );
 }

@@ -7,6 +7,7 @@ import Contact from './routes/Contact';
 import Login from './routes/Login'
 import Register from '/routes/Register'
 import Footer from './components/Footer.jsx'
+import Hero from './components/Hero'
 import './styles/App.css'
 
 const router = CreateBrowserRouter([

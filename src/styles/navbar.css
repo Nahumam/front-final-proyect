@@ -43,6 +43,8 @@
   font-family: "Roboto Medium";
   font-size: 0.9rem;
   display: flex;
+  background-color: #eef2fb;
+  cursor: pointer;
 }
 
 .icon a img {
@@ -99,6 +101,8 @@
   outline: none;
   color: #cd06bc;
   border-bottom: 1px solid #cd06bc;
+  background-color: #eef2fb;
+  cursor: pointer;
 }
 
 .register button {

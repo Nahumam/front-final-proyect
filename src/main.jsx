@@ -10,6 +10,8 @@ import Login from './routes/Login'
 import Register from './routes/Register'
 import Footer from './components/Footer.jsx'
 import './styles/App.css'
+import Products from './routes/Products'
+
 
 const router = createBrowserRouter([
     {
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
         element: <Register />
     },
 
+    {
+        path: '/products',
+        element: <Products/>
+    }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

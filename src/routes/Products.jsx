@@ -1,30 +1,29 @@
-import React from 'react'
-import { productos } from './data/data.js'
-import Link from 'react-router-dom'
+import React from 'react';
+import { productos } from '../data/data.js';
+import { Link } from 'react-router-dom';
 
 function Products() {
-
-const disponibilidad = () => {
-    
-    if(productos.disponible === true) {
-    return <div>Hay productos disponibles</div>
-} else {
-    return <div>No hay productos disponibles</div>
-}};
+    const disponibilidad = (producto) => {
+        if (producto.disponible) {
+            return <div>Hay productos disponibles</div>;
+        } else {
+            return <div>No hay productos disponibles</div>;
+        }
+    };
 
     return (
         <>
-
-            <div>
-                <Link to={`/product/${productos.id}`}>
-                    {productos.name}
-                    {productos.image}
-                    {disponibilidad}
-                </Link>
-            </div >
-
+            {productos.map((producto) => (
+                <div key={producto.id}>
+                    <Link to={`/product/${producto.id}`}>
+                        <div>{producto.name}</div>
+                        <img src={producto.image} alt={producto.name} />
+                        {disponibilidad(producto)}
+                    </Link>
+                </div>
+            ))}
         </>
-    )
+    );
 }
 
-export default Products
+export default Products;

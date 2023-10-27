@@ -1,6 +1,6 @@
-import React from 'react';
-import Hero from './components/Hero.jsx'
-import Collection from './components/StylishCollection.jsx'
+
+import Hero from '../components/Hero'
+import Collection from '../components/StylishCollection'
 
 
 function Home() {

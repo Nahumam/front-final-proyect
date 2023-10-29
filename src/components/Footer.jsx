@@ -1,6 +1,9 @@
 import React from 'react'
 import '../styles/footer.css'
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
+=======
+>>>>>>> 6457e4766c2ae7334a8a41231b558e5d434203c9
 
 function Footer() {
     return (

@@ -1,10 +1,13 @@
 import React from 'react';
-import Hero from './components/Hero.jsx'
-import Collection from './components/StylishCollection.jsx'
+import Hero from '../components/Hero'
+import Collection from '../components/StylishCollection'
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 
 function Home() {
     return <>
+        <Navbar />
         <div className="hero">
             <Hero />
         </div>
@@ -12,7 +15,7 @@ function Home() {
         <div className="stylish-collection">
             <Collection />
         </div>
-
+        <Footer />
     </>;
 }
 

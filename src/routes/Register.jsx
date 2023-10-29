@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import '../styles/register.css'
+import Navbar from '../components/Navbar';
 
 function Register() {
   const [fullName, setFullName] = useState('');
@@ -28,42 +30,45 @@ function Register() {
   };
 
   return (
-    <div className="register-page">
-      <h1>Registro</h1>
-      <div className="register-form">
-        <div className="form-group">
-          <label htmlFor="fullName">Nombre completo:</label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            value={fullName}
-            onChange={handleFullNameChange}
-          />
+    <>
+      <Navbar />
+      <div className="register-page">
+        <h1 className='register-title'>Registrarse</h1>
+        <div className="register-form">
+          <div className="form-group">
+            <label htmlFor="fullName">Nombre completo:</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              value={fullName}
+              onChange={handleFullNameChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Correo Electrónico:</label>
+            <input
+              type="email"
+              id="email-register"
+              name="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Contraseña:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <button className='register-button-click' onClick={handleRegister}>Registrarse</button>
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Contraseña:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button onClick={handleRegister}>Registrarse</button>
       </div>
-    </div>
+    </>
   );
 }
 

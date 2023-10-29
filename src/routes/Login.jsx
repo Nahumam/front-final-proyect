@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import '../styles/login.css'
+import Navbar from '../components/Navbar';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,32 +24,36 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
-      <h1>Iniciar Sesión</h1>
-      <div className="login-form">
-        <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
+    <>
+      <Navbar />
+      <div className="login-page">
+        <h1 className='login-title'>Iniciar Sesión</h1>
+        <div className="login-form">
+          <div className="form-group">
+            <label htmlFor="email">Correo Electrónico:</label>
+            <input
+              className='input-container'
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Contraseña:</label>
+            <input
+              className='input-container'
+              id='password'
+              name="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <button className='login-button-click' onClick={handleLogin}>Iniciar Sesión</button>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Contraseña:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button onClick={handleLogin}>Iniciar Sesión</button>
       </div>
-    </div>
+    </>
   );
 }
 

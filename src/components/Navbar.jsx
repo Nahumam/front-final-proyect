@@ -38,8 +38,7 @@ function Navbar() {
                                 onClick={() => toggleDropdown('inicio')}
                             >
                                 <NavLink
-                                    activeClassName="active"
-                                    className={`bttn ${showDropdown.inicio ? 'active' : ''}`}
+                                    className={`bttn-first ${showDropdown.inicio ? 'active' : ''}`}
                                 >
                                     Inicio <FaAngleDown />
                                 </NavLink>
@@ -64,7 +63,6 @@ function Navbar() {
                                 onClick={() => toggleDropdown('mueblesHogar')}
                             >
                                 <NavLink
-                                    activeClassName="active"
                                     className={`bttn ${showDropdown.mueblesHogar ? 'active' : ''}`}
                                 >
                                     Muebles Para El Hogar <FaAngleDown />
@@ -87,7 +85,6 @@ function Navbar() {
                                 onClick={() => toggleDropdown('salaEstar')}
                             >
                                 <NavLink
-                                    activeClassName="active"
                                     className={`bttn ${showDropdown.salaEstar ? 'active' : ''}`}
                                 >
                                     Sala De Estar <FaAngleDown />
@@ -117,7 +114,6 @@ function Navbar() {
                                 onClick={() => toggleDropdown('acercaDe')}
                             >
                                 <NavLink
-                                    activeClassName="active"
                                     className={`bttn ${showDropdown.acercaDe ? 'active' : ''}`}
                                 >
                                     Acerca de <FaAngleDown />
@@ -139,7 +135,6 @@ function Navbar() {
                                 onClick={() => toggleDropdown('contacto')}
                             >
                                 <NavLink
-                                    activeClassName="active"
                                     className={`bttn ${showDropdown.contacto ? 'active' : ''}`}
                                 >
                                     Contacto <FaAngleDown />
@@ -156,12 +151,12 @@ function Navbar() {
                     </ul>
                     <ul className="login-register">
                         <li className="login">
-                            <Link to={''}>
+                            <Link to={'/login'}>
                                 <button>Iniciar Sesión</button>
                             </Link>
                         </li>
                         <li className="register">
-                            <Link to={''}>
+                            <Link to={'/register'}>
                                 <button>Registrarse</button>
                             </Link>
                         </li>

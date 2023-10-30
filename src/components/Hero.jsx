@@ -1,4 +1,4 @@
-
+import React from 'react'
 import Sofa from '../assets/hero/sofa.jpg'
 import Design from '../assets/hero/design.jpg'
 import Interior from '../assets/hero/interior.jpg'

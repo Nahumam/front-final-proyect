@@ -1,8 +1,14 @@
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './routes/Home'
+import About from './routes/About'
+import Contact from './routes/Contact';
+import Login from './routes/Login'
+import Register from './routes/Register'
+import Footer from './components/Footer'
+import './styles/App.css'
 
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import StylishCollection from './components/StylishCollection'
-// import LastTrends from './components/LastTrends.jsx'
 
 
 function App() {

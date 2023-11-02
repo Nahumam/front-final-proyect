@@ -1,12 +1,12 @@
 .collection {
-    padding: 60px;
+    padding: 100px 60px;
     background-color: #eef2fb;
 }
 
 .collection-title {
     font-size: 50px;
     margin-bottom: 15px;
-    color: #333;
+    color: black;
 }
 
 .collection > p {

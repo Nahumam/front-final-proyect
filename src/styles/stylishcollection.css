@@ -1,0 +1,47 @@
+.collection {
+    padding: 60px;
+    background-color: #eef2fb;
+}
+
+.collection-title {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.collection > p {
+    font-size: 25px;
+    width: 60%;
+    color: #cbced5;
+}
+
+.collection-buttons {
+    margin-top: 60px;
+}
+
+.collection-buttons > button {
+    font-size: 25px;
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: #cbced5;
+}
+
+.collection-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    width: 91%;
+}
+
+.collection-grid > div {
+    width: 250px;
+    height: 250px;
+    background-color: black;
+    margin-bottom: 40px ;
+}

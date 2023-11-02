@@ -8,7 +8,6 @@
     display: flex;
     justify-content: center;
     background-color: #eef2fb;
-    color: #333;
 }
 
 .left-hero-container {
@@ -45,7 +44,7 @@
     cursor: pointer;
 }
 
-.arrow-right {
+.arrow-rigth {
     margin-left: 15px;
 }
 

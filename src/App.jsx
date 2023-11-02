@@ -6,13 +6,45 @@ import StylishCollection from './components/StylishCollection'
 
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+
+    {
+      path: "/about",
+      element: <About />
+    },
+
+    {
+      path: "/contact",
+      element: <Contact />
+    },
+
+    {
+      path: "/login",
+      element: <Login />
+    },
+
+    {
+      path: "/register",
+      element: <Register />
+    },
+
+  ])
+
   return (
     <>
-      <Navbar />
-      <Hero />
-      <StylishCollection />
+      <div className="navbar-in">
+        <Navbar />
+      </div>
+      <RouterProvider router={router} />
+      <div className="footer-in">
+        <Footer />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -16,7 +16,16 @@ function StylishCollection() {
                     <button>Comedor</button>
                     <button>Más</button>
                 </div>
-                <div className="collection-grid"></div>
+                <div className="collection-grid">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </section>
         </>
     )

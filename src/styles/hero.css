@@ -101,6 +101,11 @@
     margin-right: 25px;
     border-radius: 30px;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.img-design:hover {
+    transform: scale(1.2);
 }
 
 .img-sofa {
@@ -108,6 +113,11 @@
     height: 215px;
     border-radius: 30px;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.img-sofa:hover {
+    transform: scale(1.2);
 }
 
 .img-interior {
@@ -115,5 +125,10 @@
     height: 215px;
     border-radius: 30px;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.img-interior:hover {
+    transform: scale(1.2);
 }
 

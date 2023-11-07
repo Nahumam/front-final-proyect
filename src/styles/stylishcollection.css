@@ -45,3 +45,32 @@
     background-color: black;
     margin-bottom: 40px ;
 }
+
+@media screen and (max-width: 900px) {
+    .collection {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .collection-title {
+        text-align: center;
+    }
+    .collection > p {
+        width: 100%;
+        text-align: center;
+    }
+    .collection-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .collection-buttons > button {
+        margin: 5px;
+    }
+    .collection-grid {
+        justify-content: center;
+    }
+
+}

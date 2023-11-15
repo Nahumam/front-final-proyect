@@ -19,6 +19,10 @@
     margin-top: 70px;
 }
 
+.top-hero-titles {
+    margin-bottom: 60px;
+}
+
 .hero-title {
     font-size: 50px;
     padding: 10px;
@@ -44,6 +48,7 @@
     align-items: center;
     font-size: medium;
     cursor: pointer;
+    margin: 10px;
 }
 
 .arrow-rigth {
@@ -96,6 +101,11 @@
     margin-right: 25px;
     border-radius: 30px;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.img-design:hover {
+    transform: scale(1.2);
 }
 
 .img-sofa {
@@ -103,6 +113,11 @@
     height: 215px;
     border-radius: 30px;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.img-sofa:hover {
+    transform: scale(1.2);
 }
 
 .img-interior {
@@ -110,4 +125,46 @@
     height: 215px;
     border-radius: 30px;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.img-interior:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-hero-container {
+        width: 70%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .hero-subtitle {
+        width: 100%;
+    }
+    .explore-more {
+        justify-content: center;
+    }
+    
+}
+
+@media screen and (max-width: 485px) {
+    .right-hero-container {
+        width: auto;
+    }
+    .superior-right-container {
+        flex-wrap: wrap;
+    }
+    .img-design {
+        margin-right: 0px;
+    }
+    .img-interior {
+        width: 100%;
+    }
 }

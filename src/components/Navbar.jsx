@@ -51,7 +51,7 @@ function Navbar() {
                                             <Link to={''}>Nuestra colección premium</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={''}>Ofertas</Link>
+                                            <Link to={'/ofertas'}>Ofertas</Link>
                                         </li>
                                     </ul>
                                 )}

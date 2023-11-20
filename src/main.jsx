@@ -9,6 +9,7 @@ import Login from './routes/Login'
 import Register from './routes/Register'
 import Products from './routes/Products'
 import './styles/App.css'
+import Ofertas from './routes/Ofertas';
 
 
 
@@ -46,6 +47,12 @@ import './styles/App.css'
         {
             path: "/products",
             element: <Products />,
+            errorElement: <h1>Error</h1>
+        },
+
+        {
+            path: "/ofertas",
+            element: <Ofertas />,
             errorElement: <h1>Error</h1>
         }
 

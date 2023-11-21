@@ -30,18 +30,29 @@
     background-color: #cbced5;
 }
 
-.collection-grid{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-    width: 91%;
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Establece columnas automáticas con un ancho mínimo de 180px */
+  grid-gap: 20px; /* Espaciado entre elementos */
 }
 
-.collection-grid > div {
-    width: 250px;
-    height: 250px;
-    background-color: black;
-    margin-bottom: 40px ;
+
+.product-item {
+  margin-bottom: 0; /* Elimina el margen inferior para que no haya espacio adicional entre filas */
 }
+
+.product-item button {
+  width: 100%;
+  text-align: left;
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Añade otros estilos según sea necesario */
+
+/* Añade otros estilos según sea necesario */

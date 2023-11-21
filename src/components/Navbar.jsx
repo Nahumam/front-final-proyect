@@ -48,7 +48,7 @@ function Navbar() {
                                             <Link to={'/'}>Regresar al Inicio</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={''}>Nuestra colección premium</Link>
+                                            <Link to={'/premium'}>Nuestra colección premium</Link>
                                         </li>
                                         <li className="bttn-open">
                                             <Link to={'/ofertas'}>Ofertas</Link>
@@ -70,10 +70,10 @@ function Navbar() {
                                 {showDropdown.mueblesHogar && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
-                                            <Link to={''}>Habitacion</Link>
+                                            <Link to={''}>Camas</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={''}>Cocina</Link>
+                                            <Link to={''}>Placards</Link>
                                         </li>
                                     </ul>
                                 )}
@@ -100,9 +100,6 @@ function Navbar() {
                                         <li className="bttn-open">
                                             <Link to={''}>Sillas</Link>
                                         </li>
-                                        <li className="bttn-open">
-                                            <Link to={''}>Mesas y estanterias</Link>
-                                        </li>
                                     </ul>
                                 )}
                             </div>
@@ -121,10 +118,7 @@ function Navbar() {
                                 {showDropdown.acercaDe && (
                                     <ul className="dropdown">
                                         <li className="bttn-open">
-                                            <Link to={''}>Nuestros miembros</Link>
-                                        </li>
-                                        <li className="bttn-open">
-                                            <Link to={''}>Más acerca de nosotros</Link>
+                                            <Link to={'/about'}>Más acerca de nosotros</Link>
                                         </li>
                                     </ul>
                                 )}

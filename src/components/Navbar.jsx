@@ -4,8 +4,13 @@ import Logo from '../assets/logo.svg';
 import '../styles/navbar.css';
 import { FaAngleDown } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
+import LoggedIn from './NavBarLoggedIn';
+import LoggedOut from './NavbarLoggedOut';
 
 function Navbar() {
+
+    // Dropdown
+
     const [showDropdown, setShowDropdown] = useState({
         inicio: false,
         acercaDe: false,
@@ -24,6 +29,8 @@ function Navbar() {
         });
     };
 
+    // Logica para el responsive design
+
     const [isActive, setIsActive] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
     const [showButtons, setShowButtons] = useState(false);
@@ -36,6 +43,10 @@ function Navbar() {
         const rightContainer = document.querySelector('.right-container-navbar');
         rightContainer.classList.toggle('active');
     };
+
+    // Inicio de sesion
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
     return (
@@ -158,18 +169,9 @@ function Navbar() {
                             </div>
                         </li>
                     </ul>
-                    <ul className={`login-register ${showButtons ? "active" : ""}`}>
-                        <li className="login">
-                            <Link to={'/login'}>
-                                <button>Iniciar Sesión</button>
-                            </Link>
-                        </li>
-                        <li className="register">
-                            <Link to={'/register'}>
-                                <button>Registrarse</button>
-                            </Link>
-                        </li>
-                    </ul>
+                    <div className="logged-">
+                    {isLoggedIn ? <LoggedIn /> : <LoggedOut />}
+                    </div>
                 </div>
 
                 <div

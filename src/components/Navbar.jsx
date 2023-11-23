@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
 import '../styles/navbar.css';
 import { FaAngleDown } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
-import LoggedIn from './NavBarLoggedIn';
+import NavBarLoggedIn from './NavBarLoggedIn';
 import LoggedOut from './NavbarLoggedOut';
+import { getUserLoggedIn } from '../api/apis';
+
+
 
 function Navbar() {
 
@@ -44,9 +48,26 @@ function Navbar() {
         rightContainer.classList.toggle('active');
     };
 
-    // Inicio de sesion
+    // Inicio o cierre de sesion
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        // Verifica si el usuario está autenticado al cargar el componente
+        const checkLoggedInStatus = async () => {
+            try {
+                const response = await getUserLoggedIn();
+                if (response.data) {
+                    setIsLoggedIn(true);
+                }
+            } catch (error) {
+                setIsLoggedIn(false);
+            }
+        };
+
+        checkLoggedInStatus();
+    }, []);
+
 
 
     return (
@@ -170,7 +191,11 @@ function Navbar() {
                         </li>
                     </ul>
                     <div className="logged-">
-                    {isLoggedIn ? <LoggedIn /> : <LoggedOut />}
+                        {isLoggedIn ? (
+                            <NavBarLoggedIn />
+                        ) : (
+                            <LoggedOut />
+                        )}
                     </div>
                 </div>
 

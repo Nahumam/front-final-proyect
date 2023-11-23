@@ -4,6 +4,7 @@ import Sofa from '../assets/hero/sofa.jpg'
 import Design from '../assets/hero/design.jpg'
 import Interior from '../assets/hero/interior.jpg'
 import '../styles/hero.css'
+import { Link } from 'react-router-dom'
 
 function Hero() {
     return (
@@ -28,13 +29,16 @@ function Hero() {
                             <div className="new-button">Nuevo</div>
                             <img src={Sofa} alt="" className='img-sofa'/>
                         </div>
+                </Link>
                     </div>
+                    <Link>
                     <div className="bottom-right-container">
                         <div className="hero-images3">
                             <div className="new-button-bottom">Nuevo</div>
                             <img src={Interior} alt="" className='img-interior'/>
                         </div>
-                    </div>
+                        </div>
+                    </Link>
                 </div>
             </section>
         </>

@@ -1,18 +1,44 @@
 import React, { useState } from 'react';
-import '../styles/login.css'
+import { useNavigate } from 'react-router-dom';
+
+import { signIn } from '../api/apis';
 import Navbar from '../components/Navbar';
-function Login() {
+
+import '../styles/login.css'
+
+//---------------------------------------------
+// TODO: VALIDAR CAMPOS. TOAST EN CASO DE ERROR
+//---------------------------------------------
+
+const Login = () => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEmailChange = (e) => {
+  const navigate = useNavigate();
+
+  const SignInFunction = () => {
+    signIn(email, password)
+      .then((res) => {
+        window.localStorage.setItem('token', res.data.token);
+        navigate('/');
+      })
+      .catch((error) => {
+        //TOAST PARA EL ERROR: USUARIO NO ENCONTRADO
+        console.log(error);
+      });
+  }
+
+  //--------------------------------------------
+
+  /* const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-
+  
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
+  
   const handleLogin = () => {
     // Agrega la lógica de autenticación aquí
     if (email && password) {
@@ -21,7 +47,7 @@ function Login() {
     } else {
       alert('Por favor, completa todos los campos.');
     }
-  };
+  }; */
 
   return (
     <>
@@ -36,8 +62,8 @@ function Login() {
               type="email"
               id="email"
               name="email"
-              value={email}
-              onChange={handleEmailChange}
+              //value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-group">
@@ -46,11 +72,11 @@ function Login() {
               className='input-container'
               id='password'
               name="password"
-              value={password}
-              onChange={handlePasswordChange}
+              //value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button className='login-button-click' onClick={handleLogin}>Iniciar Sesión</button>
+          <button className='login-button-click' onClick={() => SignInFunction()}>Iniciar Sesión</button>
         </div>
       </div>
     </>

@@ -1,6 +1,17 @@
 import '../styles/stylishcollection.css'
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
 
 function StylishCollection() {
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        fetch('https://e-commerce-api-bwhg.onrender.com/api/product')
+            .then(response => response.json())
+            .then(data => setProductos(data.slice(0, 8)))
+            .catch(error => console.error('error', error))
+    }, []);
+
     return (
         <>
             <section className="collection">
@@ -9,26 +20,29 @@ function StylishCollection() {
                 </h1>
                 <p>Mantente informado con nuestras publicaciones en el blog sobre muebles modernos y de moda en la industria</p>
                 <div className="collection-buttons">
-                    <button>Todos los Muebles</button>
-                    <button>Dormitorio</button>
-                    <button>Sala de Estar</button>
-                    <button>Oficina en Casa</button>
-                    <button>Comedor</button>
-                    <button>Más</button>
+                    <button><Link to="/">Todos los Muebles</Link></button>
+                    <button><Link to="/dormitorio">Dormitorio</Link></button>
+                    <button><Link to="/sala-de-estar">Sala de Estar</Link></button>
+                    <button><Link to="/oficina-en-casa">Oficina en Casa</Link></button>
+                    <button><Link to="/comedor">Comedor</Link></button>
+                    <button><Link to="/mas">Más</Link></button>
                 </div>
                 <div className="collection-grid">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    {productos.map(producto => (
+                        <div key={producto.id} className="product-item">
+                            <button>
+                                <Link to={`/detalle/${producto.id}`}>
+                                    <img src={producto.image} alt={producto.name} />
+                                    <h3>{producto.name}</h3>
+                                    <p>${producto.price}</p>
+                                </Link>
+                            </button>
+                        </div>
+                    ))}
                 </div>
             </section>
         </>
     )
 }
 
-export default StylishCollection
+export default StylishCollection;

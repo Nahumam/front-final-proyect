@@ -18,6 +18,7 @@
   display: flex;
   align-items: center;
   margin-top: 12px;
+  margin-left: 20px;
 }
 
 .navbar-list .bttn {
@@ -167,4 +168,19 @@
 
 .bttn.active {
   white-space: nowrap;
+}
+
+.menu-hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+.right-container-navbar{
+    flex-direction: column;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+  }
+
 }

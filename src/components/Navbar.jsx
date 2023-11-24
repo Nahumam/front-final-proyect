@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
 import '../styles/navbar.css';
 import { FaAngleDown } from "react-icons/fa";
+import { FiAlignJustify } from "react-icons/fi";
 
 function Navbar() {
     const [showDropdown, setShowDropdown] = useState({
@@ -23,6 +24,16 @@ function Navbar() {
         });
     };
 
+    const [isActive, setIsActive] = useState(false);
+    const [menuActive, setMenuActive] = useState(false);
+    const [showButtons, setShowButtons] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuActive(!menuActive);
+        setShowButtons(!showButtons);
+        setIsActive(!isActive);
+    };
+
     return (
         <>
             <section className="navbar-container">
@@ -32,7 +43,7 @@ function Navbar() {
                     </Link>
                 </div>
                 <div className="right-container-navbar">
-                    <ul className="navbar-list">
+                    <ul className={`navbar-list scale-up-right bttons ${showButtons ? "active" : ""}`}>
                         <li>
                             <div
                                 onClick={() => toggleDropdown('inicio')}
@@ -143,7 +154,7 @@ function Navbar() {
                             </div>
                         </li>
                     </ul>
-                    <ul className="login-register">
+                    <ul className={`login-register scale-up-right bttons ${showButtons ? "active" : ""}`} >
                         <li className="login">
                             <Link to={'/login'}>
                                 <button>Iniciar Sesión</button>
@@ -156,6 +167,14 @@ function Navbar() {
                         </li>
                     </ul>
                 </div>
+
+                <div
+                    className={`menu-hamburger ${menuActive ? "active" : ""}`}
+                    onClick={toggleMenu}
+                >
+                    <FiAlignJustify />
+                </div>
+
             </section>
         </>
     );

@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
 import '../styles/navbar.css';
 import { FaAngleDown } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
+<<<<<<< HEAD
+=======
+import NavBarLoggedIn from './NavBarLoggedIn';
+import LoggedOut from './NavbarLoggedOut';
+import { getUserLoggedIn } from '../api/apis';
+
+
+>>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
 
 function Navbar() {
+
+    // Dropdown
+
     const [showDropdown, setShowDropdown] = useState({
         inicio: false,
         acercaDe: false,
@@ -24,6 +36,11 @@ function Navbar() {
         });
     };
 
+<<<<<<< HEAD
+=======
+    // Logica para el responsive design
+
+>>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
     const [isActive, setIsActive] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
     const [showButtons, setShowButtons] = useState(false);
@@ -32,8 +49,38 @@ function Navbar() {
         setMenuActive(!menuActive);
         setShowButtons(!showButtons);
         setIsActive(!isActive);
+<<<<<<< HEAD
     };
 
+=======
+
+        const rightContainer = document.querySelector('.right-container-navbar');
+        rightContainer.classList.toggle('active');
+    };
+
+    // Inicio o cierre de sesion
+
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        // Verifica si el usuario está autenticado al cargar el componente
+        const checkLoggedInStatus = async () => {
+            try {
+                const response = await getUserLoggedIn();
+                if (response.data) {
+                    setIsLoggedIn(true);
+                }
+            } catch (error) {
+                setIsLoggedIn(false);
+            }
+        };
+
+        checkLoggedInStatus();
+    }, []);
+
+
+
+>>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
     return (
         <>
             <section className="navbar-container">
@@ -42,8 +89,13 @@ function Navbar() {
                         <img src={Logo} alt="" />
                     </Link>
                 </div>
+<<<<<<< HEAD
                 <div className="right-container-navbar">
                     <ul className={`navbar-list scale-up-right bttons ${showButtons ? "active" : ""}`}>
+=======
+                <div className={`right-container-navbar ${showButtons ? "active" : ""}`}>
+                    <ul className="navbar-list">
+>>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
                         <li>
                             <div
                                 onClick={() => toggleDropdown('inicio')}
@@ -154,6 +206,7 @@ function Navbar() {
                             </div>
                         </li>
                     </ul>
+<<<<<<< HEAD
                     <ul className={`login-register scale-up-right bttons ${showButtons ? "active" : ""}`} >
                         <li className="login">
                             <Link to={'/login'}>
@@ -166,6 +219,15 @@ function Navbar() {
                             </Link>
                         </li>
                     </ul>
+=======
+                    <div className="logged-">
+                        {isLoggedIn ? (
+                            <NavBarLoggedIn />
+                        ) : (
+                            <LoggedOut />
+                        )}
+                    </div>
+>>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
                 </div>
 
                 <div

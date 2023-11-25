@@ -29,7 +29,6 @@ function Hero() {
                             <div className="new-button">Nuevo</div>
                             <img src={Sofa} alt="" className='img-sofa'/>
                         </div>
-                </Link>
                     </div>
                     <Link>
                     <div className="bottom-right-container">

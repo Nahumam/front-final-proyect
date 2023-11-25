@@ -8,7 +8,7 @@ function StylishCollection() {
     useEffect(() => {
         fetch('https://e-commerce-api-bwhg.onrender.com/api/product')
             .then(response => response.json())
-            .then(data => setProductos(data.slice(0, 8)))
+            .then(data => setProductos(data.slice(0, 10)))
             .catch(error => console.error('error', error))
     }, []);
 
@@ -32,9 +32,11 @@ function StylishCollection() {
                         <div key={producto.id} className="product-item">
                             <button>
                                 <Link to={`/detalle/${producto.id}`}>
+                                    <div className='card-contenido'>
                                     <img src={producto.image} alt={producto.name} />
-                                    <h3>{producto.name}</h3>
+                                    <h3>{producto.name.substring(0,20).concat('...')}</h3>
                                     <p>${producto.price}</p>
+                                    </div>
                                 </Link>
                             </button>
                         </div>

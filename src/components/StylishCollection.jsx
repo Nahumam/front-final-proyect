@@ -21,9 +21,9 @@ function StylishCollection() {
                 <p>Mantente informado con nuestras publicaciones en el blog sobre muebles modernos y de moda en la industria</p>
                 <div className="collection-grid">
                     {productos.map(producto => (
-                        <div key={producto.id} className="product-item">
+                        <div key={producto._id} className="product-item">
                             <button>
-                                <Link to={`/detalle/${producto.id}`}>
+                                <Link to={`/detalle/${producto._id}`}>
                                     <img src={producto.image} alt={producto.name} />
                                     <h3>{producto.name}</h3>
                                     <p>${producto.price}</p>

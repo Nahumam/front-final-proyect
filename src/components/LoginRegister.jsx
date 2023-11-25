@@ -1,18 +1,10 @@
 import React from 'react'
-import { useState } from 'react';
-import '../styles/navbar.css';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-
-
-function LoggedOut() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-
-
+function LoginRegister() {
     return (
         <>
-            <ul className={`login-register`}>
+            <ul className="login-register">
                 <li className="login">
                     <Link to={'/login'}>
                         <button>Iniciar Sesión</button>
@@ -28,11 +20,4 @@ function LoggedOut() {
     )
 }
 
-
-
-
-
-
-export default LoggedOut
-
-
+export default LoginRegister

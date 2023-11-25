@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
 import '../styles/navbar.css';
 import { FaAngleDown } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
-<<<<<<< HEAD
-=======
 import NavBarLoggedIn from './NavBarLoggedIn';
-import LoggedOut from './NavbarLoggedOut';
+import LoginRegister from './LoginRegister';
 import { getUserLoggedIn } from '../api/apis';
 
 
->>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
 
 function Navbar() {
 
@@ -36,11 +32,8 @@ function Navbar() {
         });
     };
 
-<<<<<<< HEAD
-=======
     // Logica para el responsive design
 
->>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
     const [isActive, setIsActive] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
     const [showButtons, setShowButtons] = useState(false);
@@ -49,10 +42,6 @@ function Navbar() {
         setMenuActive(!menuActive);
         setShowButtons(!showButtons);
         setIsActive(!isActive);
-<<<<<<< HEAD
-    };
-
-=======
 
         const rightContainer = document.querySelector('.right-container-navbar');
         rightContainer.classList.toggle('active');
@@ -60,7 +49,7 @@ function Navbar() {
 
     // Inicio o cierre de sesion
 
-    const[isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         // Verifica si el usuario está autenticado al cargar el componente
@@ -80,7 +69,6 @@ function Navbar() {
 
 
 
->>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
     return (
         <>
             <section className="navbar-container">
@@ -89,13 +77,8 @@ function Navbar() {
                         <img src={Logo} alt="" />
                     </Link>
                 </div>
-<<<<<<< HEAD
-                <div className="right-container-navbar">
-                    <ul className={`navbar-list scale-up-right bttons ${showButtons ? "active" : ""}`}>
-=======
                 <div className={`right-container-navbar ${showButtons ? "active" : ""}`}>
                     <ul className="navbar-list">
->>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
                         <li>
                             <div
                                 onClick={() => toggleDropdown('inicio')}
@@ -206,28 +189,13 @@ function Navbar() {
                             </div>
                         </li>
                     </ul>
-<<<<<<< HEAD
-                    <ul className={`login-register scale-up-right bttons ${showButtons ? "active" : ""}`} >
-                        <li className="login">
-                            <Link to={'/login'}>
-                                <button>Iniciar Sesión</button>
-                            </Link>
-                        </li>
-                        <li className="register">
-                            <Link to={'/register'}>
-                                <button>Registrarse</button>
-                            </Link>
-                        </li>
-                    </ul>
-=======
-                    <div className="logged-">
+                    <div className="logged">
                         {isLoggedIn ? (
                             <NavBarLoggedIn />
                         ) : (
-                            <LoggedOut />
+                            <LoginRegister />
                         )}
                     </div>
->>>>>>> 664f44fc4807003d250e0644b5a7d45842b4fb3d
                 </div>
 
                 <div

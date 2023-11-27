@@ -94,10 +94,7 @@ function Navbar() {
                                             <Link to={'/'}>Regresar al Inicio</Link>
                                         </li>
                                         <li className="bttn-open">
-                                            <Link to={'/premium'}>Nuestra colección premium</Link>
-                                        </li>
-                                        <li className="bttn-open">
-                                            <Link to={'/ofertas'}>Ofertas</Link>
+                                            <Link to={'/categories'}>Categorias</Link>
                                         </li>
                                     </ul>
                                 )}

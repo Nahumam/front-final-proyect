@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid, Pagination, PaginationItem } from '@mui/material';
 
 import { getProducts } from '../api/apis.js';
 
@@ -9,19 +10,33 @@ import { getProducts } from '../api/apis.js';
 
 function Products() {
     const [productos, setProductos] = useState([]);
+    const [filterList, setFilterList] = useState([]);
+    const [categoria, setCategoria] = useState('');
+
+    const [count, setCount] = useState(0);
+
+    const location = useLocation();
+    const query = new URLSearchParams(location.search);
+    const page = parseInt(query.get('pagina') || '1', 10);
 
     const getProductList = async () => {
         await getProducts()
             .then((res) => {
                 setProductos(res.data);
+                setFilterList(res.data);
+                setCount(res.data.length);
             });
     }
 
     useEffect(() => {
         getProductList();
-    }, []);
+    }, [page]);
 
-    console.log(productos);
+    useEffect(() => {
+        setFilterList(productos.filter(producto => producto.category.includes(categoria)));
+    }, [categoria, productos]);
+
+    console.log(filterList)
 
     const disponibilidad = (producto) => {
         if (producto.stockQuantity > 0) {
@@ -33,63 +48,178 @@ function Products() {
 
     return (
         <>
-            {/*  {productos.map((producto) => (
-                <div key={producto.id}>
-                    <Link to={`/product/${producto.id}`}>
-                        <div>{producto.name}</div>
-                        <img src={producto.image} alt={producto.name} />
-                        <div>{producto.price}</div>
-                        <div>{producto.rating}</div>
-                        <div>{producto.category}</div>
-                        <div>{producto.description}</div>
-                        {disponibilidad(producto)}
-                    </Link>
-                </div>
-            ))} */}
             <Grid container
-                xs={12}
                 sx={{
                     width: '100%',
                     py: '2em',
+                    display: 'flex',
+                    flexDirection: 'column',
                     justifyContent: "center",
                     alignItems: "center",
-                    gap: 4
+                    background: "linear-gradient(241deg, rgba(237,241,250,1) 81%, rgba(226,174,234,1) 96%)"
                 }}
             >
-                {productos.map((producto) => (
-                    <Grid item
-                        key={producto._id}
+                <Grid item
+                    xs={12}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'start'
+                    }}
+                >
+                    {/* TRAER TODOS LOS PRODUCTOS. LIMPIAR FILTRO */}
+                    <Button
+                        onClick={
+                            () => setCategoria('')
+                        }
                     >
-                        <Card sx={{ maxWidth: 345, maxHeight: 345 }}>
-                            <CardMedia
-                                sx={{ height: 140 }}
-                                image="https://target.scene7.com/is/image/Target/GUEST_8d80b7b0-7a6b-40f6-8fc7-edeb7656d79f?wid=488&hei=488&fmt=pjpeg"
-                                title={producto.name}
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {producto.name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {producto.description}
-                                </Typography>
-                            </CardContent>
-                            <CardActions
+                        Todos
+                    </Button>
+                    {/* TRAER SOLO PRODUCTOS CUYA CATEGORIA SEA WARDROBE */}
+                    <Button
+                        onClick={
+                            () => {
+                                setCategoria('wardrobe')
+                            }
+                        }
+                    >
+                        Wardrobes
+                    </Button>
+                    {/* TRAER SOLO PRODUCTOS CUYA CATEGORIA SEA BEDS */}
+                    <Button
+                        onClick={
+                            () => {
+                                setCategoria('beds')
+                            }
+                        }
+                    >
+                        Beds
+                    </Button>
+                    {/* TRAER SOLO PRODUCTOS CUYA CATEGORIA SEA MATTRESSES */}
+                    <Button
+                        onClick={
+                            () => {
+                                setCategoria('mattresses')
+                            }
+                        }
+                    >
+                        Mattresses
+                    </Button>
+                    {/* TRAER SOLO PRODUCTOS CUYA CATEGORIA SEA DRESSERS */}
+                    <Button
+                        onClick={
+                            () => {
+                                setCategoria('dressers')
+                            }
+                        }
+                    >
+                        Dressers
+                    </Button>
+                    {/* TRAER SOLO PRODUCTOS CUYA CATEGORIA SEA DRAWERS */}
+                    <Button
+                        onClick={
+                            () => {
+                                setCategoria('drawers')
+                            }
+                        }
+                    >
+                        Drawers
+                    </Button>
+                    {/* TRAER SOLO PRODUCTOS CUYA CATEGORIA SEA CHAIRS */}
+                    <Button
+                        onClick={
+                            () => {
+                                setCategoria('chairs')
+                            }
+                        }
+                    >
+                        Chairs
+                    </Button>
+                    {/* TRAER SOLO PRODUCTOS CUYA CATEGORIA SEA ARMCHAIRS */}
+                    <Button
+                        onClick={
+                            () => {
+                                setCategoria('armchairs')
+                            }
+                        }
+                    >
+                        Armchairs
+                    </Button>
+                </Grid>
+                <Grid container
+                    xs={10}
+                    sx={{
+                        width: '100%',
+                        py: '2em',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: 4
+                    }}
+                >
+                    {filterList.slice((page - 1) * 12, page * 12).map((producto) => (
+                        <Grid item
+                            key={producto._id}
+                        >
+                            <Card
                                 sx={{
-                                    px: 2,
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center'
+                                    maxWidth: 345,
+                                    minWidth: 345,
+                                    maxHeight: 345,
+                                    background: 'none',
+                                    boxShadow: 'none',
                                 }}
                             >
-                                <Typography variant="body2" color="text.secondary">
-                                    {disponibilidad(producto)}
-                                </Typography>
-                                <Button size="small">Add to cart</Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                ))}
+                                <CardMedia
+                                    sx={{ 
+                                        height: 200,
+                                        borderRadius: '1em',
+                                        overflow: 'hidden'
+                                    }}
+                                    image={producto.image}
+                                    title={producto.name}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="body1" fontWeight={"bold"}>
+                                        {(producto.name).substring(0, 50).concat('...')}
+                                    </Typography>
+                                </CardContent>
+                                <CardActions
+                                    sx={{
+                                        px: 2,
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center'
+                                    }}
+                                >
+                                    <Typography variant="body2" color="text.secondary">
+                                        {disponibilidad(producto)}
+                                    </Typography>
+                                    <Button size="small" href={`/product/${producto._id}`}>Ver producto</Button>
+                                </CardActions>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
+                <Pagination
+                    sx={{
+                        padding: ".7em",
+                        borderTop: "1px solid rgb(225, 225, 225)",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "flex-end",
+                    }}
+                    page={page}
+                    count={Math.ceil(count / 12)}
+                    renderItem={(item) => (
+                        <PaginationItem
+                            component={Link}
+                            to={`${item.page === 1 ? "" : `?pagina=${item.page}`}`}
+                            {...item}
+                        />
+                    )}
+                />
             </Grid>
         </>
     );

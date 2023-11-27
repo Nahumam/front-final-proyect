@@ -21,12 +21,12 @@ const Register = () => {
 
   const signUpFunction = () => {
     signUp(firstName, lastName, email, password)
-      .then((res) => {
-        window.sessionStorage.setItem('token', res.data.token);
-        navigate('/');
-      });
+    .then((res) => {
+      window.sessionStorage.setItem('token', res.data.token);
+      navigate('/');
+    });
   }
-
+  
   //----------------------------------------------
 
   /* const handleFullNameChange = (e) => {
@@ -101,9 +101,9 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button className='register-button-click'
+          <button className='register-button-click' 
             onClick={() => signUpFunction()}
-            disabled={firstName && lastName && email && password ? false : true} // Si los campos existen, entonces no esta deshabilitado el boton
+            disabled = {firstName && lastName && email && password ? false : true} // Si los campos existen, entonces no esta deshabilitado el boton
           >
             Registrarse
           </button>

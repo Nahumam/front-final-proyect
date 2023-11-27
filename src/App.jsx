@@ -9,9 +9,7 @@ import About from './routes/About';
 import Contact from './routes/Contact';
 import Login from './routes/Login';
 import Register from './routes/Register';
-import Product from './routes/Product';
-import Cart from './routes/Cart';
-import Categories from './routes/Categories';
+// import Cart from ...
 
 import AuthRoute from './routes/AuthRoute';
 
@@ -43,12 +41,6 @@ function App() {
       path: "/register",
       element: <Register />
     },
-
-    {
-      path: "/product/:productId",
-      element: <Product />
-    },
-    
     // RUTA AUTENTICADA
     {
       path: '/cart',
@@ -58,16 +50,6 @@ function App() {
         </AuthRoute>
       )
     },
-
-    {
-      path: '/categories',
-      element: (
-        <AuthRoute>
-          <Categories />
-        </AuthRoute>
-        ),
-    }
-
   ])
 
   return (

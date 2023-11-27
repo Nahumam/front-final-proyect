@@ -18,6 +18,7 @@
   display: flex;
   align-items: center;
   margin-top: 12px;
+  margin-left: 20px;
 }
 
 .navbar-list .bttn {
@@ -213,7 +214,6 @@
     display: block;
     color: #121115;
     font-size: 30px;
-    cursor: pointer;
   }
 
   .right-container-navbar.active {

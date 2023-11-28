@@ -17,7 +17,7 @@ const Ofertas = () => {
   return (
     <div>
       {/* Navbar */}
-     <Navbar/>
+    <Navbar/>
 
       {/* Ofertas */}
       <div className="offer-container">

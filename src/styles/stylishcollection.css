@@ -1,5 +1,5 @@
 .collection {
-    padding: 100px 60px;
+    padding: 100px 75px;
     background-color: #eef2fb;
 }
 
@@ -12,7 +12,7 @@
 .collection > p {
     font-size: 25px;
     width: 60%;
-    color: #cbced5;
+    color:#999999;
 }
 
 .collection-buttons {
@@ -30,11 +30,16 @@
     background-color: #cbced5;
 }
 
+.collection-buttons > button:hover {
+  background-color: #000000;
+  color: #eef2fb;
+}
 
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Establece columnas automáticas con un ancho mínimo de 180px */
-  grid-gap: 20px; /* Espaciado entre elementos */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Establece columnas automáticas con un ancho mínimo de 180px */
+  grid-gap: 30px 20px; /* Espaciado entre elementos */
+  margin-top: 50px;
 }
 
 
@@ -45,6 +50,7 @@
 .product-item button {
   width: 100%;
   text-align: left;
+  border: none;
 }
 
 .product-item img {

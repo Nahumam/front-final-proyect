@@ -19,6 +19,14 @@ function StylishCollection() {
                     Elegante Colección de Muebles
                 </h1>
                 <p>Mantente informado con nuestras publicaciones en el blog sobre muebles modernos y de moda en la industria</p>
+                <div className="collection-buttons">
+                    <button>Todos los Muebles</button>
+                    <button>Dormitorio</button>
+                    <button>Sala de Estar</button>
+                    <button>Oficina en Casa</button>
+                    <button>Comedor</button>
+                    <button>Más</button>
+                </div>
                 <div className="collection-grid">
                     {productos.map(producto => (
                         <div key={producto.id} className="product-item">
